@@ -1,0 +1,19 @@
+{
+  "name": "@twind/capsize",
+  "version": "0.1.0",
+  "description": "A Twind plugin that mimics the behaviour of seek-oss capsize",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "start": "npx servor --browse --reload --editor"
+  },
+  "keywords": [
+    "twind",
+    "capsize",
+    "plugin",
+    "font",
+    "lineheight"
+  ],
+  "author": "https://github.com/lukejacksonn",
+  "license": "MIT"
+}
