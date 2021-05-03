@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" hidden>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@twind/capsize</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+  <script type="module">
+
+    import { setup } from "https://cdn.skypack.dev/twind/shim";
+    import { capsize } from "./index.js";
+
+    setup({
+      theme: {
+        fontMetrics: {
+          Lato: {
+            capHeight: 1433,
+            ascent: 1974,
+            descent: -426,
+            lineGap: 0,
+            unitsPerEm: 2000
+          }
+        },
+        extend: {
+          fontFamily: {
+            display: ['Lato', 'sans-serif']
+          }
+        }
+      },
+      plugins: {
+        cap: capsize,
+      },
+    });
+
+  </script>
+</head>
+<body class="bg-black">
+  <main class="p-10 m-auto text-white flex flex-col space-y-20 max-w-4xl">
+    <section class="space-y-10 children:(border-t border-b text-white)">
+      <h1 class="cap-display-7xl-tight font-thin">The quick brown fox jumped over the lazy dog</h1>
+      <h2 class="cap-display-6xl font-thin">The quick brown fox jumped over the lazy dog</h2>
+      <h3 class="cap-display-5xl font-thin">The quick brown fox jumped over the lazy dog</h3>
+      <h4 class="cap-display-4xl font-thin">The quick brown fox jumped over the lazy dog</h4>
+      <h5 class="cap-display-3xl font-thin">The quick brown fox jumped over the lazy dog</h5>
+      <h6 class="cap-display-2xl font-thin">The quick brown fox jumped over the lazy dog</h6>
+    </section>
+    <section class="space-y-10 children:(border-t border-b text-white)">
+      <h1 class="cap-sans-7xl">The quick brown fox jumped over the lazy dog</h1>
+      <h2 class="cap-sans-6xl">The quick brown fox jumped over the lazy dog</h2>
+      <h3 class="cap-sans-5xl">The quick brown fox jumped over the lazy dog</h3>
+      <h4 class="cap-sans-4xl">The quick brown fox jumped over the lazy dog</h4>
+      <h5 class="cap-sans-3xl">The quick brown fox jumped over the lazy dog</h5>
+      <h6 class="cap-sans-2xl">The quick brown fox jumped over the lazy dog</h6>
+    </section>
+    <section class="space-y-10 children:(border-t border-b text-white)">
+      <h1 class="cap-serif-7xl">The quick brown fox jumped over the lazy dog</h1>
+      <h2 class="cap-serif-6xl">The quick brown fox jumped over the lazy dog</h2>
+      <h3 class="cap-serif-5xl">The quick brown fox jumped over the lazy dog</h3>
+      <h4 class="cap-serif-4xl">The quick brown fox jumped over the lazy dog</h4>
+      <h5 class="cap-serif-3xl">The quick brown fox jumped over the lazy dog</h5>
+      <h6 class="cap-serif-2xl">The quick brown fox jumped over the lazy dog</h6>
+    </section>
+    <section class="space-y-10 children:(border-t border-b text-white)">
+      <h1 class="cap-mono-7xl">The quick brown fox jumped over the lazy dog</h1>
+      <h2 class="cap-mono-6xl">The quick brown fox jumped over the lazy dog</h2>
+      <h3 class="cap-mono-5xl">The quick brown fox jumped over the lazy dog</h3>
+      <h4 class="cap-mono-4xl">The quick brown fox jumped over the lazy dog</h4>
+      <h5 class="cap-mono-3xl">The quick brown fox jumped over the lazy dog</h5>
+      <h6 class="cap-mono-2xl">The quick brown fox jumped over the lazy dog</h6>
+    </section>
+  </main>
+</body>
+</html>
