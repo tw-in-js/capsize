@@ -8,17 +8,23 @@
 
 This Twind plugin allows for the application of the above behaviours using shorthand like `cap-serif-3xl-tight`.
 
+## Installation
+
+```sh
+npm install @twind/capsize
+```
+
 ## Usage
 
 The Twind integration here is just a function and works like any other plugin:
 
 ```js
-import { setup } from "twind/shim";
-import { capsize } from "./index.js";
+import { setup } from 'twind/shim'
+import { capsize } from '@twind/capsize'
 
 setup({
-  plugins: { cap: capsize }
-});
+  plugins: { cap: capsize },
+})
 ```
 
 Once set up, invoke the plugin with the following syntax in your HTML or JSX:
@@ -35,15 +41,15 @@ The plugin expects some arguments after the plugin name (i.e. `cap` in this inst
 - `fontSize` (required): from the theme, for example `sm|base|lg|xl`
 - `lineHeight` (optional): from the theme, for example `normal|relaxed|loose`
 
-The appropriate corrections will be applied to an element according to these arguments and the relating values in your theme file. For convenience, some of the font metrics for default fonts on Windows, Mac and Android are included with the plugin, along with a function that uses canvas to detect what font is being used by the browser from any  given font family.
+The appropriate corrections will be applied to an element according to these arguments and the relating values in your theme file. For convenience, some of the font metrics for default fonts on Windows, Mac and Android are included with the plugin, along with a function that uses canvas to detect what font is being used by the browser from any given font family.
 
 > 💡 It is possible to generate metrics for any font using the [tool on the capsize homepage](https://seek-oss.github.io/capsize/)
 
 If you are using a custom font stack then you will need to supply the appropriate font metrics in your theme:
 
 ```js
-import { setup } from "https://cdn.skypack.dev/twind/shim";
-import { capsize } from "./index.js";
+import { setup } from 'https://cdn.skypack.dev/twind/shim'
+import { capsize } from 'https://cdn.skypack.dev/@twind/capsize'
 
 setup({
   theme: {
@@ -53,19 +59,19 @@ setup({
         ascent: 1974,
         descent: -426,
         lineGap: 0,
-        unitsPerEm: 2000
-      }
+        unitsPerEm: 2000,
+      },
     },
     extend: {
       fontFamily: {
-        display: ['Lato', 'sans-serif']
-      }
-    }
+        display: ['Lato', 'sans-serif'],
+      },
+    },
   },
   plugins: {
     cap: capsize,
   },
-});
+})
 ```
 
 Then use the plugin in the same way as before but providing the name of the custom font stack as the first argument:
@@ -82,6 +88,3 @@ Then use the plugin in the same way as before but providing the name of the cust
 ## Acknowledgements
 
 This project was inspired by and vendors code from [Capsize](https://seek-oss.github.io/capsize/) and [DetectFont](https://github.com/Wildhoney/DetectFont).
-
-
-
